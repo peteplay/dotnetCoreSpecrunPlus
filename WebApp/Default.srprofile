@@ -44,14 +44,14 @@
         <EnvironmentVariable variable="__Password" value="password" />
       </DeploymentTransformationSteps>
     </Target>-->
-      <Target name="Edge">
+      <!--<Target name="Edge">
       <DeploymentTransformationSteps>
         <EnvironmentVariable variable="Test_Browser" value="Edge" />
         <EnvironmentVariable variable="__BaseUrl" value="http://zero.webappsecurity.com/index.html" />
         <EnvironmentVariable variable="__Username" value="username" />
         <EnvironmentVariable variable="__Password" value="password" />
       </DeploymentTransformationSteps>
-    </Target>
+    </Target>-->
   </Targets>  
   
 </TestProfile>

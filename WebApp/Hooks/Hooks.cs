@@ -35,21 +35,16 @@ namespace WebApp.Hooks1
                 //    //firefoxOptions.AddArguments("--headless", "--start-maximized");
                 //    Driver = new FirefoxDriver(firefoxOptions);
                 //    break;
-                case "Edge":
-                    var edgeDriverService = Microsoft.Edge.SeleniumTools.EdgeDriverService.CreateChromiumService();
-                    var edgeOptions = new Microsoft.Edge.SeleniumTools.EdgeOptions();
-                    edgeOptions.PageLoadStrategy = PageLoadStrategy.Normal;
-                    edgeOptions.UseChromium = true;
-                    //edgeOptions.AddArguments("--headless");
-                    //edgeOptions.AddArguments("--start-maximized");
-                    edgeOptions.AddArguments(new List<string>() { "headless", "--start-maximized" });
-                    Driver = new Microsoft.Edge.SeleniumTools.EdgeDriver(edgeDriverService, edgeOptions);
-                    break;
-                    //case "IE":
-                    //    var internetExplorerOptions = new InternetExplorerOptions();
-                    //    internetExplorerOptions.AddAdditionalCapability("--start-maximized", "--acceptInsecureCertificates");
-                    //    Driver = new InternetExplorerDriver();
-                    //    break;
+                //case "Edge":
+                //    var edgeDriverService = Microsoft.Edge.SeleniumTools.EdgeDriverService.CreateChromiumService();
+                //    var edgeOptions = new Microsoft.Edge.SeleniumTools.EdgeOptions();
+                //    edgeOptions.PageLoadStrategy = PageLoadStrategy.Normal;
+                //    edgeOptions.UseChromium = true;
+                //    //edgeOptions.AddArguments("--headless");
+                //    //edgeOptions.AddArguments("--start-maximized");
+                //    edgeOptions.AddArguments(new List<string>() { "headless", "--start-maximized" });
+                //    Driver = new Microsoft.Edge.SeleniumTools.EdgeDriver(edgeDriverService, edgeOptions);
+                //    break;
             }
 
             var baseURL = Environment.GetEnvironmentVariable("__BaseUrl");
