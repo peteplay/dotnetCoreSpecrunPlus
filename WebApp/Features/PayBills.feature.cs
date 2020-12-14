@@ -119,6 +119,9 @@ this.FeatureBackground();
   testRunner.When("I click the pay Bills tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
+  testRunner.And("the Bills page has fully loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
   testRunner.And("the Pay Saved Payee tab is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -133,10 +136,10 @@ this.FeatureBackground();
                             "250",
                             "Today+1",
                             "This is a payment"});
-#line 14
+#line 15
   testRunner.And("I make a payment to a saved payee", ((string)(null)), table2, "And ");
 #line hidden
-#line 17
+#line 18
   testRunner.Then("a payment success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

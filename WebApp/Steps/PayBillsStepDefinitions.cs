@@ -22,6 +22,12 @@ namespace WebApp.Steps
             _scenarioContext = scenarioContext;
         }
 
+        [When(@"the Bills page has fully loaded")]
+        public void WhenTheBillsPageHasFullyLoaded()
+        {
+            payBillsPage.WaitForPageToFullyLoad();
+        }
+
         [When(@"the Pay Saved Payee tab is active")]
         public void WhenThePaySavedPayeeTabIsActive()
         {

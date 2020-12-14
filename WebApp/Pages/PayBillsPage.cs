@@ -6,6 +6,7 @@ using FluentAssertions;
 using OpenQA.Selenium.Support.UI;
 using WebApp.Drivers;
 using System.Threading;
+using WebApp.Extensions;
 
 namespace WebApp.Pages
 {
@@ -20,9 +21,11 @@ namespace WebApp.Pages
         IWebElement txtDate = Driver.FindElement(By.Id("sp_date"));
         IWebElement txtDescription = Driver.FindElement(By.Id("sp_description"));
         IWebElement btnPay = Driver.FindElement(By.XPath("//input[@type='submit']"));
-        
+
 
         //public void ClickPayBillsTab() => tabPayBills.Click();
+
+        public void WaitForPageToFullyLoad() => Driver.WaitForPageLoaded();
 
         public void IsPaySavedPayeeTabActive()
         {
@@ -33,33 +36,32 @@ namespace WebApp.Pages
 
         public void FillPaymentForm(string payee, string creditCard, int amount, string date, string description)
         {
-            // select the payee
-            SelectElement payeeOption = new SelectElement(drpPayee);
-            payeeOption.SelectByText(payee);
-            drpPayee.Click();
+            // select the payee using WebElementExtensions
+            drpPayee.SelectDropDownList(payee);
 
-            // select the account
-            SelectElement savingsOption = new SelectElement(drpSavings);
-            savingsOption.SelectByText(creditCard);
-            drpPayee.Click();
+            //SelectElement payeeOption = new SelectElement(drpPayee);
+            //payeeOption.SelectByText(payee);
+            //drpPayee.Click();
+
+            // select the account using WebElementExtensions
+            drpSavings.SelectDropDownList(creditCard);
+            //SelectElement savingsOption = new SelectElement(drpSavings);
+            //savingsOption.SelectByText(creditCard);
+            //drpPayee.Click();
 
             // enter an amount
             txtAmount.SendKeys(amount.ToString());
 
             // enter today +1 day
-            //var payeeDate = DateTime.Today.AddDays(1).ToString("YYYY-MM-dd");
             var payeeDate = DateTime.Now.Date.AddDays(+1).ToString("yyyy-MM-dd");
             txtDate.SendKeys(payeeDate);
 
             // enter a description
             txtDescription.SendKeys(description);
-            //Thread.Sleep(5000);
 
             // click Pay
             btnPay.Click();
         }
-
-        
 
 
     }

@@ -10,6 +10,7 @@ Background: Verify Logged In
 @PayBills
 Scenario: Make payments to my saved payees
 		When I click the pay Bills tab
+		And the Bills page has fully loaded
 		And the Pay Saved Payee tab is active
 		And I make a payment to a saved payee
 		| Payee           | Account     | Amount | Date       | Description       |
