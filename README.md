@@ -1,5 +1,5 @@
 # dotnetCoreSpecrunPlus
-Uses specflow+ test runner and Fluent assertions and Specflow 3.5.8
+This solution uses the Specflow+ (formally specrun) test runner and Fluent assertions and Specflow 3.5.8
 
 This project tests the following features 
 **Feedback.feature,
